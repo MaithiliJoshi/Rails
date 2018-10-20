@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_19_115037) do
+ActiveRecord::Schema.define(version: 2018_10_20_054618) do
 
   create_table "customers", force: :cascade do |t|
     t.string "first_name"
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 2018_10_19_115037) do
     t.datetime "updated_at", null: false
     t.string "mobile"
     t.string "secondary_passcode"
+    t.boolean "is_email_verified", default: false
+    t.string "email_verification_token"
+    t.string "auth_type", default: "email"
   end
 
 end

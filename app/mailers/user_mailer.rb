@@ -16,7 +16,7 @@ class UserMailer <ApplicationMailer
 
  	def email_verification(customer)
 	@customer = customer
-	@url = 
+	@verification_token = @customer[:email_verification_token]
     mail(to: customer.email, :subject => "Email Verification")
  end
 end

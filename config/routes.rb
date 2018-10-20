@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 	 post 'signup/signIn'
 	 post 'signup/request_otp_for_signup'
 	 post 'signup/set_secondary_passcode'
+	 post 'signup/resend_email_verification'
+	 post 'signup/verify_email'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

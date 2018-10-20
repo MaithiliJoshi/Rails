@@ -50,6 +50,17 @@ class SignupController < ApplicationController
 		end
 	end
 
+	def resend_email_verification
+		@customer = Customer.find_by(id:params[:id])
+		UserMailer.email_verification(@customer).deliver_now
+	end
+
+	def verify_email
+		@customer = Customer.find_by_email_verification_token(params[:email_verification_token])
+		@customer.email_verified
+	end
+
+
 	private 
 
 	def customer_params
